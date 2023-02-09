@@ -1,0 +1,138 @@
+/* 1221 parallax.css */
+:root{
+  --c-primary:#210002;
+  --c-orange :#ffaf00;
+}
+
+/* 공통============================== */
+
+#wrap {width: 100%; height: auto; min-height: 125rem;
+  font-family: 'Open Sans', sans-serif;}
+#headBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  width: 100%;
+  height: 34px;
+  background-color: var(--c-primary);
+  line-height: 34px;
+  color: var(--c-orange);
+  text-transform: uppercase;
+  letter-spacing: -0.125rem;
+  font-weight: 900;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+h1{
+  width: 118px;
+  height: 100%;
+  color: var(--c-orange);
+  overflow: hidden;
+  font-size: 18px;
+  padding-left: 8px;
+
+}
+#navBox{width: auto; height: 100%; padding-right: 8px;}
+#navBox ul{width: auto; min-width: 25rem; height: 100%;}
+#navBox ul li{float: left; margin-left: 1rem;}
+#navBox ul li:first-child {margin-left: 0;}
+#navBox a {display: block; width: auto; height: 100%;}
+
+
+/* 스크롤시 headBox 사라짐 */
+
+#viewBox {
+  position: relative; overflow: hidden;
+  width: 100%; height: 100vh; min-height: 31.25rem;
+  background-color: #acf;}
+  
+  #viewBox div{
+    position: absolute; left: 50%; bottom: 0;
+    transform: translateX(-50%);
+    width: 100%; min-width: 1600px;
+    /* 원본 이미지가 너무 키기 때문에 1600px 정도로 줄여주기 */
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: cover;
+  }
+
+  .view_01{z-index: 1; background-image: url("/img/parallax0.png");}
+  .view_02{z-index: 2; background-image: url("/img/parallax1.png");}
+  .view_03{z-index: 3; background-image: url("/img/parallax2.png");}
+  .view_04{z-index: 4; background-image: url("/img/parallax3.png");}
+  .view_05{z-index: 5; background-image: url("/img/parallax4.png");}
+  .view_06{z-index: 6; background-image: url("/img/parallax5.png");}
+  .view_07{z-index: 7; background-image: url("/img/parallax6.png");}
+  .view_08{z-index: 8; background-image: url("/img/parallax7.png");}
+  .view_09{z-index: 9; background-image: url("/img/parallax8.png");}
+  
+#gameNarrBox{
+  width: 100%; height: auto; min-height: 62.5rem;
+  box-sizing: border-box; padding-top: 5rem;
+  text-align: center; color: var(--c-orange);
+  background-color: var(--c-primary);
+}
+
+#sampleBox {
+  width: 100%; height: auto; min-width: 500px; min-height: 62.5rem; box-sizing: border-box; padding-top: 5rem; background-color: var(--c-primary); color: var(--c-orange);
+  text-align: center;
+}
+
+#sampleBox h2 {margin-bottom: 3rem;}
+
+#sampleBox ul{width: 70%; min-width: 500px; margin: auto;}
+#sampleBox ul::after{content: " "; display: block; clear: both;}
+
+
+#sampleBox ul li{
+  float: left; width: 45%; height: 20vh; min-height: 12.5rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: 90% 0%;
+  background-size: auto 200%; /* 아래/위 기준 200%*/
+}
+
+
+#sampleBox ul li:nth-child(1){
+  background-image: url("/img/firewatch_01.jpg");
+}
+#sampleBox ul li:nth-child(2){
+  background-image: url("/img/firewatch_02.jpg");
+}
+#sampleBox ul li:nth-child(3){
+  background-image: url("/img/firewatch_03.jpg");
+}
+#sampleBox ul li:nth-child(4){
+  background-image: url("/img/firewatch_04.jpg");
+}
+#sampleBox ul li:nth-child(2n){float: right;}
+/* #sampleBox a{} */
+
+#footBox{width: 100%; height: 62.5rem;
+  background-color: var(--c-primary); color: var(--c-orange);
+  text-align: center;
+}
+
+
+/* mobile==============================  */
+
+  /* android 타블릿 기준으로 사용가능 */
+@media screen and (max-width: 599px){
+  #headBox{width: 0; height: 0; overflow: hidden;}
+  
+  /* mobile ~599px 까지는 고정형임으로 */
+  #viewBox > div {display: none;}
+  #viewBox{
+    background-color: #ccc;
+    background-image: url("/img/keyart-mobile.jpg");
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+/* other============================== */
